@@ -7,11 +7,6 @@ function StudentDetail(props) {
   const history = useHistory();
 
   function handleEditClick() {
-    // dispatch to store this student info in redux
-    dispatch({ type: 'SET_STUDENT_TO_EDIT', payload: props.student });
-
-    // route to EditForm
-    history.push('/edit');
   }
 
   return (

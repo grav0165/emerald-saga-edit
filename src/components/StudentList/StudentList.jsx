@@ -12,7 +12,10 @@ function StudentList(props) {
             <table>
                 <thead>
                     <tr>
-                        <th>Github Name</th>
+                        <th>Cohort</th>
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>Github name</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
