@@ -9,7 +9,7 @@ function StudentDetail(props) {
   return (
     <tr>
       <td>{props.student.github_name}</td>
-      <td>Edit!</td>
+      <td><button>Edit</button></td>
     </tr>
   );
 }
