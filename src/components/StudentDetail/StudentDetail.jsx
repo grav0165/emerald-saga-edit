@@ -7,6 +7,12 @@ function StudentDetail(props) {
   const history = useHistory();
 
   function handleEditClick() {
+    dispatch({
+      type: 'SET_EDIT_STUDENT',
+      payload: props.student
+    })
+    // Go to /edit
+    history.push('/edit')
   }
 
   return (

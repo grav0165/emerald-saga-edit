@@ -1,13 +1,21 @@
 import { useSelector} from 'react-redux';
 import './StudentList.css';
 import StudentDetail from '../StudentDetail/StudentDetail';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 
 function StudentList(props) {
 
     const studentList = useSelector(store => store.studentList);
 
-    return (
+    const loadingSpinner = useSelector(store => store.loadingSpinner)
+
+  
+
+    return loadingSpinner ?  (
+        <LoadingSpinner /> 
+    ) : 
+    (
         <div>
             <table>
                 <thead>
