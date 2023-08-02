@@ -25,7 +25,7 @@ const studentList = (state = [], action) => {
 }
 
 // hold only the single student object being edited
-const editStudent = (state  = {}, action) => {
+const studentToEdit = (state  = {}, action) => {
 
     return state;
 }
@@ -63,8 +63,7 @@ function* rootSaga() {
 // The store is the big JavaScript Object that holds all of the information for our application
 const store = createStore(
     combineReducers({
-        studentList,
-        editStudent
+        studentList
     }),
     applyMiddleware(sagaMiddleware, logger),
 );
