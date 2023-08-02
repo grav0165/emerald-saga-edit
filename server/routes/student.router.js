@@ -19,8 +19,8 @@ router.get('/', (req, res) => {
 router.put('/:id', (req, res) => {
     // Update this single student
     const idToUpdate = req.params.id;
-    const sqlText = `UPDATE students SET github_name = $1 WHERE id = $2`;
-    pool.query(sqlText, [req.body.github_name, idToUpdate])
+    const sqlText = `UPDATE students SET cohort = $1, first_name = $2, last_name = $3, github_name = $4 WHERE id = $5`;
+    pool.query(sqlText, [req.body.cohort, req.body.first_name, req.body.last_name, req.body.github_name, idToUpdate])
         .then((result) => {
             res.sendStatus(200);
         })
@@ -33,10 +33,10 @@ router.put('/:id', (req, res) => {
 // POST students
 router.post('/', (req, res) => {
     console.log(req.body);
-    const newStudent = req.body.github_name;
-    const sqlText = `INSERT INTO students (github_name) VALUES ($1)`;
+    const newStudent = req.body;
+    const sqlText = `INSERT INTO students (cohort, first_name, last_name, github_name) VALUES ($1, $2, $3, $4)`;
 
-    pool.query(sqlText, [newStudent])
+    pool.query(sqlText, [newStudent.cohort, newStudent.first_name, newStudent.last_name, newStudent.github_name])
         .then((result) => {
             res.sendStatus(201);
         })
