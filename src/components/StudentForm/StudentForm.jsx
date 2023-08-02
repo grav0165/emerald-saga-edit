@@ -28,15 +28,15 @@ function StudentForm() {
             />
             <input onChange={(event) => setStudent({ ...student, first_name: event.target.value })}
                 placeholder="First name"
-                value={student.firstName}
+                value={student.first_name}
             />
             <input onChange={(event) => setStudent({ ...student, last_name: event.target.value })}
                 placeholder="Last name"
-                value={student.lastName}
+                value={student.last_name}
             />
             <input onChange={(event) => setStudent({ ...student, github_name: event.target.value })}
                 placeholder="GitHub username"
-                value={student.githubName}
+                value={student.github_name}
             />
             <input type="submit" value="Add Student" />
         </form>
